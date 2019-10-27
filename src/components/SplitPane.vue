@@ -1,8 +1,8 @@
 <template>
   <div id="split-pane-container">
-    <EditPane v-bind:width="editWidth" />
+    <EditPane v-bind:width="editWidth" :onTextChange="onTextChange" />
     <ResizeBar :resizeDrag="resizeDrag" />
-    <RenderPane v-bind:width="renderWidth" />
+    <RenderPane v-bind:width="renderWidth" :text="text" />
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
     return {
       editWidth: appWidth / 2,
       renderWidth: appWidth / 2,
+      text: '',
     }
   },
   methods: {
@@ -31,6 +32,15 @@ export default {
 
       const appWidth = document.getElementById('app').getBoundingClientRect().width
       this.$set(this, 'renderWidth', appWidth - x)
+    },
+    onTextChange(val) {
+      this.$set(this, 'text', val)
+    },
+  },
+  watch: {
+    text: function (val) {
+      console.log(val)
+      console.log('watching on text in split pane')
     }
   },
 }
