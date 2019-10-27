@@ -19,9 +19,10 @@ export default {
     RenderPane,
   },
   data: function () {
+    const appWidth = document.getElementById('app').getBoundingClientRect().width
     return {
-      editWidth: 100,
-      renderWidth: 100,
+      editWidth: appWidth / 2,
+      renderWidth: appWidth / 2,
     }
   },
   methods: {
