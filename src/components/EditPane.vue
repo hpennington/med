@@ -42,11 +42,9 @@ export default {
 }
 #edit-text-area {
   background-color: inherit;
-  width: 95%;
-  height: 100%;
+  width: 100%;
   font-size: 1em;
   border: none;
-  margin: 5%;
   outline: none;
 }
 </style>

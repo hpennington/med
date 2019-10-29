@@ -1,4 +1,4 @@
-# med
+# med (Markdown Editor)
 
 ## Project setup
 ```
